@@ -134,7 +134,7 @@ def checkLine(line):
 if __name__ == '__main__':
     logfile = open(logPath,"r")                                         # Open the trace file
     loglines = tail(logfile)                                            # tail the trace log file
-    client = mqtt.Client("AD_Honeypot_"+ clientName + "_"+ random.randint(1111, 9999))       # Client name needs to be unique 
+    client = mqtt.Client("AD_Honeypot_"+ clientName + "_"+ str(random.randint(1111, 9999)))       # Client name needs to be unique 
     client.connect(MQTTBroker)                                          
     client.publish(MQTTbaseTopic + "state", "boot")
     
